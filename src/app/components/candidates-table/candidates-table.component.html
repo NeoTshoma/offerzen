@@ -33,6 +33,11 @@
             <td>{{candidate.salary | currency:'R':'symbol':'1.0'}}</td>
             <td>{{candidate.sent_by}}</td>
         </tr>
+        <tr *ngIf="candidatesList.length === 0">
+            <td colspan="5">
+                <app-notification [message]="'No Candidates found!'"></app-notification>
+            </td>
+        </tr>
     </tbody>
 </table>
 <!-- Mobile View -->
@@ -71,6 +76,11 @@
                 </div>
             </div>
         </div>
+        </div>
+        
+
+        <div class="col-12">
+            <app-notification *ngIf="candidatesList.length === 0" [message]="'No Candidates found!'"></app-notification>
         </div>
     </div>
 </div>
