@@ -28,6 +28,10 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
+  updateCandidates(candidates: Candidate[]): void {
+    this.candidates = candidates;
+  }
+
   ngOnDestroy(): void {
     this.unsubscribe.next({});
     this.unsubscribe.complete();
