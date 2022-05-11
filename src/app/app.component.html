@@ -1,5 +1,6 @@
 <div class="app-container">
     <app-nav></app-nav>
+    <app-search-and-filter (onCandidateSearch)="updateCandidates($event)"></app-search-and-filter>
     <div class="container">
         <div class="d-flex justify-content-center">
             <app-candidates-table [candidatesList]="candidates"></app-candidates-table>

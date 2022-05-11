@@ -11,12 +11,16 @@ import { NavComponent } from './components/nav/nav.component';
 import { CandidatesEffect } from './store/effects/candidates.effects';
 import { reducers, metaReducers } from './store/reducers/core.reducers';
 import { CandidatesTableComponent } from './components/candidates-table/candidates-table.component';
+import { SearchAndFilterComponent } from './components/search-and-filter/search-and-filter.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    CandidatesTableComponent
+    CandidatesTableComponent,
+    SearchAndFilterComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
