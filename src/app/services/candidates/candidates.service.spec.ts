@@ -13,4 +13,12 @@ describe('CandidatesService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should return the candidates', () => {
+    const candidates = service.getCandidates();
+
+    candidates.subscribe(c => {
+      expect(c.length).toEqual(7);
+    });
+  });
 });
