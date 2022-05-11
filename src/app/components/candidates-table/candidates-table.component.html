@@ -1,0 +1,77 @@
+<div>
+    <p>{{candidatesList.length}} interview requests</p>
+</div>
+<table class="d-none d-md-none d-lg-table">
+    <thead>
+        <tr>
+            <th>Candidate</th>
+            <th>Role</th>
+            <th>Last communication</th>
+            <th>Salary</th>
+            <th>Sent by</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let candidate of candidatesList">
+            <td>
+                <img [src]="candidate.image" class="offerzen-candidate-image" />
+                {{candidate.candidate}}
+            </td>
+            <td>{{candidate.role ? candidate.role : '-'}}</td>
+            <td>
+                <span class="reply-icon" [hidden]="!candidate.last_comms.unread"></span>
+                <span>
+                    {{candidate.last_comms.description}}
+                </span>
+                <span class="fw-lighter" [hidden]="candidate.last_comms.unread">
+                    {{candidate.last_comms.date_time | date:'dd/MM/yyy'}}
+                </span>
+                <span class="fw-lighter" [hidden]="!candidate.last_comms.unread">
+                    {{candidate.last_comms.date_time | date:'shortTime' | lowercase}}
+                </span>
+            </td>
+            <td>{{candidate.salary | currency:'R':'symbol':'1.0'}}</td>
+            <td>{{candidate.sent_by}}</td>
+        </tr>
+    </tbody>
+</table>
+<!-- Mobile View -->
+<div class="d-block d-md-block d-lg-none">
+    <div class="row">
+        <div class="col-12 col-md-6" *ngFor="let candidate of candidatesList">
+        <div class="card w-90 m-3">
+            <div class="card-body">
+                <img [src]="candidate.image" class="offerzen-candidate-image" />
+                {{candidate.candidate}}
+                <hr />
+                <div>
+                    <span class="fw-bold">Role: </span>
+                    {{candidate.role ? candidate.role : '-'}}
+                </div>
+                <div>
+                    <span class="fw-bold">Last communication: </span>
+                    <span class="reply-icon" [hidden]="!candidate.last_comms.unread"></span>
+                    <span>
+                        {{candidate.last_comms.description}}
+                    </span>
+                    <span class="fw-lighter" [hidden]="candidate.last_comms.unread">
+                        {{candidate.last_comms.date_time | date:'dd/MM/yyy'}}
+                    </span>
+                    <span class="fw-lighter" [hidden]="!candidate.last_comms.unread">
+                        {{candidate.last_comms.date_time | date:'shortTime' | lowercase}}
+                    </span>
+                </div>
+                <div>
+                    <span class="fw-bold">Salary: </span>
+                    {{candidate.salary | currency:'R':'symbol':'1.0'}}
+                </div>
+                <div>
+                    <span class="fw-bold">Sent by: </span>
+                    {{candidate.sent_by}}
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- /Mobile View -->
