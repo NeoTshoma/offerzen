@@ -1,0 +1,61 @@
+$fontSize: 12px;
+$fontColor: #7C7C80;
+$fontWeight: 600;
+
+table {
+    width: 942px;
+    height: 35px;
+    top: 98px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 3px 2px 2px 2px;
+    background: #FFFFFF;
+
+    th {
+        color: #343951;
+        font-size: $fontSize;
+        line-height: $fontSize;
+        font-weight: $fontWeight;
+        padding: 20px;
+    }
+
+    thead tr {
+        background: #F9FAFB;
+    }
+
+    td {
+        color: $fontColor;
+        font-size: $fontSize;
+        line-height: $fontSize;
+        font-weight: $fontWeight;
+        padding: 18px;
+        border-bottom: 1px solid #EEF3F6;
+    }
+}
+
+img.offerzen-candidate-image {
+    width: 30px;
+    height: 30px;
+}
+
+.reply-icon {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #34B96F;
+    margin-right: 5px;
+    border-radius: 100%;
+}
+
+p {
+    color: $fontColor;
+    display:flex;
+    justify-content: end;
+    margin-top: 25px;
+    line-height: 14px;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+.w-90 {
+    width: 90%;
+}
