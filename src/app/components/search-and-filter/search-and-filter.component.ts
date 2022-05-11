@@ -12,6 +12,7 @@ import { getCandidates } from 'src/app/store/selectors/candidates.selectors';
 export class SearchAndFilterComponent implements OnInit, OnDestroy {
   candidatesList: Candidate[] = [];
   @Output() onCandidateSearch = new EventEmitter<Candidate[]>();
+  @Output() onToggleArchived = new EventEmitter<Candidate[]>();
 
   unsubscribe = new Subject();
 
@@ -26,9 +27,19 @@ export class SearchAndFilterComponent implements OnInit, OnDestroy {
   }
 
   candidateSearch(event: any): void {
-    const candidates = this.candidatesList.filter(c => c.candidate.toLocaleLowerCase().includes(event.target.value));
+    const candidates = this.candidatesList.filter(c => c.candidate.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase()));
 
     this.onCandidateSearch.emit(candidates);
+  }
+
+  toggleArchivedCandidates(event: any): void {
+    if (event.target.checked) {
+      const candidates = this.candidatesList.filter((c) => c.archived == true);
+      this.onToggleArchived.emit(candidates);
+      return;
+    }
+    
+    this.onToggleArchived.emit(this.candidatesList);
   }
 
   ngOnDestroy(): void {
