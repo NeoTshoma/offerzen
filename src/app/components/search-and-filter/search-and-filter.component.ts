@@ -34,14 +34,18 @@ export class SearchAndFilterComponent implements OnInit, OnDestroy {
 
   toggleArchivedCandidates(event: any): void {
     if (event.target.checked) {
-      const candidates = this.candidatesList?.filter((c) => c.archived == true);
-      this.onToggleArchived.emit(candidates);
+      this.toggleAndEmit(true)
       return;
     }
     
-    this.onToggleArchived.emit(this.candidatesList);
+    this.toggleAndEmit(false);
   }
 
+  toggleAndEmit(isArchived: boolean): void {
+    const candidates = this.candidatesList?.filter((c) => c.archived === isArchived);
+    this.onToggleArchived.emit(candidates);
+  }
+  
   ngOnDestroy(): void {
     this.unsubscribe.next({});
     this.unsubscribe.complete();

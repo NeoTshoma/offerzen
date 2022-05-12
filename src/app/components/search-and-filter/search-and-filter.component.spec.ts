@@ -185,18 +185,26 @@ describe('SearchAndFilterComponent', () => {
   });
 
   it('should get all archived values if the chechbox is checked', () => {
-    spyOn(component.onToggleArchived, 'emit');
+    spyOn(component, 'toggleAndEmit');
+
     component.toggleArchivedCandidates({target: {checked: true}});
 
-    expect(component.onToggleArchived.emit).toHaveBeenCalled();
+    expect(component.toggleAndEmit).toHaveBeenCalledWith(true);
   });
 
-  it('should return all values within the list if the checkbox is not checked', () => {
-    spyOn(component.onToggleArchived, 'emit');
+  it('should return all unarchived values list if the checkbox is not checked', () => {
+    spyOn(component, 'toggleAndEmit');
     component.toggleArchivedCandidates({target: {checked: false}});
   
-    expect(component.onToggleArchived.emit).toHaveBeenCalled();
+    expect(component.toggleAndEmit).toHaveBeenCalledWith(false);
   });
+
+  it('should filter by the specified value and emit a list of candidates', () => {
+    spyOn(component.onToggleArchived, 'emit');
+
+    component.toggleAndEmit(true);
+    expect(component.onToggleArchived.emit).toHaveBeenCalled();
+  })
 });
 
 
