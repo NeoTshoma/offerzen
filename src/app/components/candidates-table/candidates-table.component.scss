@@ -1,6 +1,7 @@
 $fontSize: 12px;
 $fontColor: #7C7C80;
 $fontWeight: 600;
+$sortIconsColor: #343951;
 
 table {
     width: 942px;
@@ -58,4 +59,36 @@ p {
 
 .w-90 {
     width: 90%;
+}
+
+.sort-by-asc
+{
+    left: 3px;
+    display: inline-block;
+    width: 0;
+    height: 3.98px;
+    border: solid 5px transparent;
+    margin: 4px 4px 0 3px;
+    background: transparent;
+    border-bottom: solid 5px $sortIconsColor;
+    border-top-width: 0;
+}
+
+.sort-by-desc
+{
+    left: 3px;
+    display: inline-block;
+    width: 0;
+    height: 3.98px;
+    border: solid 5px transparent;
+    margin: 4px 4px 0 3px;
+    background: transparent;
+    border-top: solid 5px $sortIconsColor;
+    border-bottom-width: 0;
+}
+
+.sort-icons-container {
+    position: relative;
+    top: -6px;
+    display: grid;
 }

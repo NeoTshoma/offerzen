@@ -1,5 +1,12 @@
-<div class="bg-white w-100 p-4">
+<div class="bg-white w-100 p-3">
     <div class="container">
-        <input type="text" placeholder="Search" (keyup)="candidateSearch($event)"/>
+        <div>
+            <input type="text" placeholder="Search" (keyup)="candidateSearch($event)" />
+            <span class="d-flex justify-content-end align-items-center filter-position">
+                <p>Show archived 
+                    <input type="checkbox" (change)="toggleArchivedCandidates($event)"/>
+                </p>
+            </span>
+        </div>
     </div>
 </div>
