@@ -34,7 +34,7 @@ export class SearchAndFilterComponent implements OnInit, OnDestroy {
 
   toggleArchivedCandidates(event: any): void {
     if (event.target.checked) {
-      const candidates = this.candidatesList.filter((c) => c.archived == true);
+      const candidates = this.candidatesList?.filter((c) => c.archived == true);
       this.onToggleArchived.emit(candidates);
       return;
     }
