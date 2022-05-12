@@ -2,26 +2,27 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
+The project makes use of `Bootstrap 5` for basic layout components and for responsive design.
+
+## Getting Started
+Run `npm install` to install the dependencies.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Github repo
 
-## Further help
+The source code and list of branches can be found on [Github](https://github.com/NeoTshoma/offerzen)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Suggestions
+
+* It would help if we knew if the navbar and search bar stick to the top or not.
+* Regarding the search, it would be helpful to know if we should delay the search with something like a debounce or not.
+* Should the search be on full character basis? Or should it be similar to the one I created?

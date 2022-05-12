@@ -1,0 +1,31 @@
+input[type="text"] {
+    border: 1px solid #E4EBEF;
+    border-radius: 3px;
+    width: 200px;
+    height: 50px;
+    background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+input[type="checkbox"] {
+    background: #E4F0FC;
+    border: 1px solid #5EA5EE;
+    border-radius: 2px;    
+    height: 20px; 
+    width: 20px;
+    position: relative;
+    top: 5px;
+}
+
+p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #7C7C80;
+}
+
+.archived-placement {
+    top: 10px;
+}
